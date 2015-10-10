@@ -1,20 +1,30 @@
 var api = require('./api');
 
-function Aeris(client_id, client_secret, city, state) {
+function Aeris(client_id, client_secret) {
 	this.client_id = client_id || null;
 	this.client_secret = client_secret || null;
-	this.city = city || null;
-	this.state = state || null;
 
-	this.url = function(endpoint, opts) {
-		var city = this.city;
-		var state = this.state;
-		var client_id = this.client_id;
-		var client_secret = this.client_secret;
-		var url = ['http://api.aerisapi.com/', endpoint, '/', city, ',', state, '?client_id=', client_id, '&client_secret=', client_secret];
-		for (key in opts) {
+	this.url = function(endpoint, options) {
+		var url = ['http://api.aerisapi.com/', endpoint, '/?client_id=', this.client_id, '&client_secret=', this.client_secret];
+		var location = '&p=';
+		switch (options.location.type) {
+			case 'city':
+				location += options.location.city + ',' + options.location.state
+				break;
+			case 'zip':
+				location += options.location.zip
+				break;
+			case 'latlong':
+				location += options.location.latitude + ',' + options.location.longitude
+				break;
+			default:
+				location = '';
+		}
+		url.push(location);
+		delete options.location;
+		for (key in options) {
 			url.push('&' + key + '=');
-			url.push(opts[key]);
+			url.push(options[key]);
 		}
 		return url.join('');
 	}
