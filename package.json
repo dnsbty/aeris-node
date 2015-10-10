@@ -1,8 +1,14 @@
 {
   "name": "aeris",
-  "version": "1.2.0",
+  "version": "0.1.0",
   "description": "Aeris Weather API wrapper for node",
-  "keywords": ["aeris", "weather api", "aeris weather", "aeris api", "aeris weather api"],
+  "keywords": [
+    "aeris",
+    "weather api",
+    "aeris weather",
+    "aeris api",
+    "aeris weather api"
+  ],
   "main": "index.js",
   "dependencies": {
     "request": "~2.60.0"
@@ -11,6 +17,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dnsbty/aeris-node.git"
+    "url": "git+https://github.com/dnsbty/aeris-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dnsbty/aeris-node/issues"
+  },
+  "homepage": "https://github.com/dnsbty/aeris-node#readme",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
