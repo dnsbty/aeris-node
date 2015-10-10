@@ -1,0 +1,16 @@
+{
+  "name": "aeris",
+  "version": "1.2.0",
+  "description": "Aeris Weather API wrapper for node",
+  "keywords": ["aeris", "weather api", "aeris weather", "aeris api", "aeris weather api"],
+  "main": "index.js",
+  "dependencies": {
+    "request": "~2.60.0"
+  },
+  "author": "@dnsbty",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dnsbty/aeris-node.git"
+  }
+}
